@@ -3,68 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chanel Logo - Turtle Translation</title>
+    <title>Chanel Logo</title>
     <style>
-        /* Centers the entire canvas on the screen, matching the canvas feel */
+        /* Setup the canvas background and center everything perfectly */
         body {
             margin: 0;
             padding: 0;
             background-color: #ffffff;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
 
-        .container {
+        .logo-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            width: 450px;
         }
 
-        /* The SVG acts as the turtle canvas */
-        .turtle-canvas {
-            width: 400px;
-            height: 250px;
+        /* SVG styling to ensure proper scaling */
+        .chanel-svg {
+            width: 100%;
+            height: auto;
         }
 
-        /* Font style translation from lines 34-35: c.write("CHANEL", font=("arial", "50")) */
+        /* Text styling translating lines 34-35 from IMG_2552.jpeg */
         .chanel-text {
             font-family: 'Arial', sans-serif;
-            font-size: 55px;
-            font-weight: bold;
-            letter-spacing: 6px;
+            font-size: 52px;
+            font-weight: 700;
+            letter-spacing: 7px;
             color: #000000;
-            margin-top: 10px;
+            margin-top: 25px;
             text-align: center;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <svg class="turtle-canvas" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
-            <path d="M 175 40 A 65 65 0 1 0 175 180" 
+    <div class="logo-container">
+        <!-- SVG Vector Canvas -->
+        <svg class="chanel-svg" viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
+            
+            <!-- Left 'C' (Curves outward to the left, opens to the right) -->
+            <path d="M 175 50 A 65 65 0 1 0 175 190" 
                   fill="none" 
-                  stroke="black" 
-                  stroke-width="30" 
+                  stroke="#000000" 
+                  stroke-width="28" 
                   stroke-linecap="square"/>
             
-            <path d="M 225 40 A 65 65 0 1 1 225 180" 
+            <!-- Right 'C' (Curves outward to the right, opens to the left) -->
+            <path d="M 225 50 A 65 65 0 1 1 225 190" 
                   fill="none" 
-                  stroke="black" 
-                  stroke-width="30" 
+                  stroke="#000000" 
+                  stroke-width="28" 
                   stroke-linecap="square"/>
             
-            <path d="M 140 46 A 65 65 0 0 1 175 40" 
+            <!-- Interlocking Patch (Forces the left C's top loop to cross OVER the right C) -->
+            <path d="M 130 57 A 65 65 0 0 1 175 50" 
                   fill="none" 
-                  stroke="black" 
-                  stroke-width="30" 
+                  stroke="#000000" 
+                  stroke-width="28" 
                   stroke-linecap="square"/>
+                  
         </svg>
 
+        <!-- The Brand Name Output -->
         <div class="chanel-text">CHANEL</div>
     </div>
 
