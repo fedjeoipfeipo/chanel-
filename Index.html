@@ -3,69 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chanel Logo in CSS</title>
+    <title>Chanel Logo - Turtle Translation</title>
     <style>
+        /* Centers the entire canvas on the screen, matching the canvas feel */
         body {
             margin: 0;
             padding: 0;
             background-color: #ffffff;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
 
-        .chanel-logo {
-            position: relative;
-            width: 260px;
-            height: 180px;
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        /* Base styles for both 'C's */
-        .c-left, .c-right {
-            position: absolute;
-            width: 140px;
-            height: 140px;
-            border: 24px solid #000000;
-            border-radius: 50%;
-            background: transparent;
+        /* The SVG acts as the turtle canvas */
+        .turtle-canvas {
+            width: 400px;
+            height: 250px;
         }
 
-        /* Left 'C' opens to the right */
-        .c-left {
-            left: 0;
-            border-right-color: transparent;
-            transform: rotate(45deg);
-        }
-
-        /* Right 'C' opens to the left */
-        .c-right {
-            right: 0;
-            border-left-color: transparent;
-            transform: rotate(-45deg);
-            z-index: 2; /* Sits on top to allow the interlock effect */
-        }
-
-        /* The Interlock Patch: Fixes the overlap so they look woven together */
-        .interlock-patch {
-            position: absolute;
-            width: 140px;
-            height: 140px;
-            border: 24px solid transparent;
-            border-top-color: #000000; /* Re-draws just the top loop of the left C */
-            border-radius: 50%;
-            left: 0;
-            transform: rotate(45deg);
-            z-index: 3; 
+        /* Font style translation from lines 34-35: c.write("CHANEL", font=("arial", "50")) */
+        .chanel-text {
+            font-family: 'Arial', sans-serif;
+            font-size: 55px;
+            font-weight: bold;
+            letter-spacing: 6px;
+            color: #000000;
+            margin-top: 10px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
-    <div class="chanel-logo">
-        <div class="c-left"></div>
-        <div class="c-right"></div>
-        <div class="interlock-patch"></div>
+    <div class="container">
+        <svg class="turtle-canvas" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 175 40 A 65 65 0 1 0 175 180" 
+                  fill="none" 
+                  stroke="black" 
+                  stroke-width="30" 
+                  stroke-linecap="square"/>
+            
+            <path d="M 225 40 A 65 65 0 1 1 225 180" 
+                  fill="none" 
+                  stroke="black" 
+                  stroke-width="30" 
+                  stroke-linecap="square"/>
+            
+            <path d="M 140 46 A 65 65 0 0 1 175 40" 
+                  fill="none" 
+                  stroke="black" 
+                  stroke-width="30" 
+                  stroke-linecap="square"/>
+        </svg>
+
+        <div class="chanel-text">CHANEL</div>
     </div>
 
 </body>
