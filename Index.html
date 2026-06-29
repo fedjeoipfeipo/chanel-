@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chanel Logo in CSS</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .chanel-logo {
+            position: relative;
+            width: 260px;
+            height: 180px;
+        }
+
+        /* Base styles for both 'C's */
+        .c-left, .c-right {
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            border: 24px solid #000000;
+            border-radius: 50%;
+            background: transparent;
+        }
+
+        /* Left 'C' opens to the right */
+        .c-left {
+            left: 0;
+            border-right-color: transparent;
+            transform: rotate(45deg);
+        }
+
+        /* Right 'C' opens to the left */
+        .c-right {
+            right: 0;
+            border-left-color: transparent;
+            transform: rotate(-45deg);
+            z-index: 2; /* Sits on top to allow the interlock effect */
+        }
+
+        /* The Interlock Patch: Fixes the overlap so they look woven together */
+        .interlock-patch {
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            border: 24px solid transparent;
+            border-top-color: #000000; /* Re-draws just the top loop of the left C */
+            border-radius: 50%;
+            left: 0;
+            transform: rotate(45deg);
+            z-index: 3; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chanel-logo">
+        <div class="c-left"></div>
+        <div class="c-right"></div>
+        <div class="interlock-patch"></div>
+    </div>
+
+</body>
+</html>
